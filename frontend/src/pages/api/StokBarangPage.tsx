@@ -804,15 +804,14 @@ const StockSelectorTable = () => {
       onSuccess: () => {
         message.success('Transaksi berhasil disimpan!')
 
-        // Tetap tampilkan loading selama 3 detik sebelum navigasi
         setTimeout(() => {
-          setIsLoading(false) // Matikan loading
+          setIsLoading(false)
           navigate(`/getinvbasedondate`)
         }, 3000) // 3000ms = 3 detik
       },
       onError: (error: any) => {
         message.error(`Terjadi kesalahan: ${error.message}`)
-        setIsLoading(false) // Matikan loading langsung jika gagal
+        setIsLoading(false)
       },
     })
   }
